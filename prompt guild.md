@@ -174,25 +174,3 @@ Hành động càng cụ thể, AI càng dễ nắm bắt nhịp điệu (timing
    * *Sửa:* Xóa ngay lập tức. Hãy nhớ, bạn đang nói chuyện với một "nghệ sĩ thị giác", không phải một "kỹ thuật viên video".
 
 **Kết luận:** Một yêu cầu (prompt) tốt là một yêu cầu mà bạn có thể **nhắm mắt lại và "thấy" được** cảnh đó trong đầu. Hãy viết cụ thể, chi tiết vừa đủ để kiểm soát những gì quan trọng, nhưng cũng đủ gọn gàng để AI có không gian "thở" (sáng tạo). Luôn ưu tiên mô tả những chi tiết đập vào mắt người xem đầu tiên.
-
-## **PHỤ LỤC: TỪ ĐIỂN THUẬT NGỮ (TRA CỨU NHANH)**
-
-**Lưu ý quan trọng:** Do lỗi kỹ thuật tạm thời, em không thể đọc toàn bộ file CSV của Khầy. Bảng tra cứu dưới đây được tạo từ *phần đầu và phần cuối* của file mà em có thể truy cập được. Các phần ở giữa (như II, III) có thể bị thiếu.
-
-| Hạng mục | TỪ KHÓA QUAN TRỌNG (Tiếng Việt) | Tiếng Anh | Đặc điểm chính | Ứng dụng phổ biến |
-| :---- | :---- | :---- | :---- | :---- |
-| **"I. PHONG CÁCH / THẨM MỸ (Aesthetic Style)"** | Phong cách YouTuber / Vlog | YouTuber / Vlogging Style | "Hình ảnh trực tiếp, năng lượng cao, thường có người dẫn chuyện (host) nhìn thẳng vào camera, cắt dựng nhanh, nhạc nền sôi động." | "Vlog cá nhân, review sản phẩm, video giải trí trên YouTube." |
-|  | Phong cách Cầm tay (góc nhìn từ camera hoặc gậy tự sướng) | Handheld / Shaky Cam | "Máy quay được cầm trực tiếp, tạo ra độ rung nhẹ, mô phỏng góc nhìn chủ quan, tăng tính chân thực và kịch tính." | "Phim tài liệu, phim hành động, cảnh chiến đấu/rượt đuổi, vlog." |
-|  | Phong cách Góc nhìn Thứ nhất | Point of View (POV) | "Máy quay mô phỏng chính xác góc nhìn của nhân vật (hoặc người quay). Người xem cảm thấy như đang trực tiếp trải nghiệm." | "Video game, trải nghiệm mạo hiểm, video ngắn trên TikTok/Reels." |
-|  | Phong cách Điện ảnh | Cinematic Style | "Sử dụng màu sắc, ánh sáng, độ sâu trường ảnh (shallow Depth of Field) và chuyển động máy quay tinh tế để tạo cảm giác chất lượng phim nhựa cao cấp." | "Phim truyện, MV ca nhạc, TVC quảng cáo thương hiệu." |
-|  | Cảnh quay từ Camera An ninh | Surveillance Style / CCTV | "Chất lượng hình ảnh kém (độ phân giải thấp, nén mạnh), góc máy cố định hoặc tự động lia, tông màu trắng đen hoặc ám xanh/xám, có..." | ... |
-| ... | ... | ... | ... | ... |
-|  | Góc cao | High Angle Shot | "Máy quay đặt trên, hướng xuống chủ thể. Thể hiện sự yếu đuối, sự kiểm soát, hoặc cho cái nhìn tổng quan." | "Cảnh chiến lược, nhìn từ xa." |
-|  | Góc Nghiêng | Dutch Angle Shot | "Đường chân trời bị nghiêng, tạo cảmGóc Nghiêng | Dutch Angle Shot |
-| Ai\_la\_nguoi\_quay\_phim |  |  |  |  |
-| **"IV. KỸ THUẬT CHUYỂN ĐỘNG (Camera Movement)"** | Lia ngang | Pan (Panning) | "Máy quay cố định tại một điểm, xoay ngang (trái-phải) để theo dõi chủ thể hoặc quét không gian." | "Theo dõi nhân vật đi ngang, giới thiệu phong cảnh." |
-|  | Quay dọc | Tilt | "Máy quay cố định tại một điểm, xoay dọc (lên-xuống) để thể hiện chiều cao hoặc chiều sâu." | "Cảnh nhìn lên tòa nhà cao, nhìn xuống vực thẳm." |
-|  | Di chuyển Tiến/Lùi | Dolly / Push-in | "Máy quay di chuyển tịnh tiến vào gần hoặc lùi ra xa chủ thể (thường bằng dolly/gimbal)." | "Nhấn mạnh tâm lý, tập trung sự chú ý, hoặc tạo hiệu ứng kinh điển (Dolly Zoom)." |
-|  | Di chuyển Song song | Tracking / Trucking Shot | "Máy quay di chuyển ngang, song song với chuyển động của chủ thể." | "Cảnh rượt đuổi, theo dõi nhân vật đi bộ." |
-|  | Cảnh quay liền mạch | One Shot / Long Take | "Một cảnh quay rất dài không bị cắt, tạo cảm giác..." | ... |
-
