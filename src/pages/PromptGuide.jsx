@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import GuideHeader from './GuideHeader'
+import PromptGlossary from './PromptGlossary'
 
 const CodeBlock = ({ code }) => {
   const [copied, setCopied] = useState(false)
@@ -426,65 +427,14 @@ Hội thoại:
 
             {/* Phụ lục */}
               <div id="terminology" className="mb-8">
-              <h3 className="text-2xl font-semibold text-white mb-4">PHỤ LỤC: TỪ ĐIỂN THUẬT NGỮ (TRA CỨU NHANH)</h3>
-              <p className="text-gray-300 mb-4">
-                <strong className="text-white">Hướng dẫn sử dụng:</strong> Thêm từ khóa tiếng Việt vào đầu lời nhắc để AI hiểu rõ phong cách và kỹ thuật bạn muốn áp dụng.
-              </p>
+                <h3 className="text-2xl font-semibold text-white mb-4">PHỤ LỤC: TỪ ĐIỂN THUẬT NGỮ (TRA CỨU NHANH)</h3>
+                <p className="text-gray-300 mb-4">
+                  <strong className="text-white">Hướng dẫn sử dụng:</strong> Thêm từ khóa tiếng Việt vào đầu lời nhắc để AI hiểu rõ phong cách và kỹ thuật bạn muốn áp dụng.
+                </p>
 
-              <div className="overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-600">
-                  <thead className="bg-gray-700">
-                    <tr>
-                      <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Hạng mục</th>
-                      <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Từ khóa (Tiếng Việt)</th>
-                      <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Tiếng Anh</th>
-                      <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Đặc điểm chính</th>
-                      <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">Ứng dụng phổ biến</th>
-                    </tr>
-                  </thead>
-                  <tbody className="bg-gray-800 divide-y divide-gray-700 text-sm">
-                    <tr><td colSpan="5" className="px-4 py-2 font-bold text-white">I. PHONG CÁCH / THẨM MỸ (Aesthetic Style)</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách YouTuber / Vlog</td><td className="px-4 py-2">YouTuber / Vlogging Style</td><td className="px-4 py-2">Hình ảnh trực tiếp, năng lượng cao, thường có người dẫn chuyện (host) nhìn thẳng vào camera, cắt dựng nhanh, nhạc nền sôi động.</td><td className="px-4 py-2">Vlog cá nhân, review sản phẩm, video giải trí trên YouTube.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Cầm tay (góc nhìn từ camera hoặc gậy tự sướng)</td><td className="px-4 py-2">Handheld / Shaky Cam</td><td className="px-4 py-2">Máy quay được cầm trực tiếp, tạo ra độ rung nhẹ, mô phỏng góc nhìn chủ quan, tăng tính chân thực và kịch tính.</td><td className="px-4 py-2">Phim tài liệu, phim hành động, cảnh chiến đấu/rượt đuổi, vlog.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Góc nhìn Thứ nhất</td><td className="px-4 py-2">Point of View (POV)</td><td className="px-4 py-2">Máy quay mô phỏng chính xác góc nhìn của nhân vật (hoặc người quay). Người xem cảm thấy như đang trực tiếp trải nghiệm.</td><td className="px-4 py-2">Video game, trải nghiệm mạo hiểm, video ngắn trên TikTok/Reels.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Điện ảnh</td><td className="px-4 py-2">Cinematic Style</td><td className="px-4 py-2">Sử dụng màu sắc, ánh sáng, độ sâu trường ảnh (shallow Depth of Field) và chuyển động máy quay tinh tế để tạo cảm giác chất lượng phim nhựa cao cấp.</td><td className="px-4 py-2">Phim truyện, MV ca nhạc, TVC quảng cáo thương hiệu.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Cảnh quay từ Camera An ninh</td><td className="px-4 py-2">Surveillance Style / CCTV</td><td className="px-4 py-2">Chất lượng hình ảnh kém (độ phân giải thấp, nén mạnh), góc máy cố định hoặc tự động lia, tông màu trắng đen hoặc ám xanh/xám, có hiển thị thời gian/ngày tháng (time code)</td><td className="px-4 py-2">Phim kinh dị, giật gân, tài liệu giả tưởng, cảnh hồi tưởng trong phim điện ảnh.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Tự nhiên/Khoảnh khắc</td><td className="px-4 py-2">Candid Style</td><td className="px-4 py-2">Bắt trọn cảm xúc, hành động tự nhiên, không sắp đặt. Hình ảnh sống động, gần gũi.</td><td className="px-4 py-2">Quay phim sự kiện (cưới, hội nghị), phim tài liệu.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Tối giản/Cân bằng</td><td className="px-4 py-2">Minimalist / Static</td><td className="px-4 py-2">Hạn chế chuyển động máy quay, tập trung vào bố cục tĩnh, đối xứng và sự tương phản giữa chủ thể và không gian.</td><td className="px-4 py-2">Phim nghệ thuật, video giới thiệu sản phẩm cao cấp, kiến trúc.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Chân dung cá nhân</td><td className="px-4 py-2">Talking Head (Solo Interview)</td><td className="px-4 py-2">Chủ thể ngồi hoặc đứng nói chuyện/trình bày một mình. Thường sử dụng bố cục quy tắc một phần ba, ánh sáng cơ bản (3 điểm sáng), tập trung vào người nói.</td><td className="px-4 py-2">Video giáo dục, bài giảng, podcast video, video giới thiệu (About Me).</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Phim ngắn (Chất lượng cao)</td><td className="px-4 py-2">High-Quality Short Film</td><td className="px-4 py-2">Tập trung vào kể chuyện bằng hình ảnh, sử dụng màu sắc, ánh sáng và bố cục phức tạp, chuyên nghiệp như điện ảnh nhưng với thời lượng ngắn.</td><td className="px-4 py-2">TVC, MV ca nhạc, phim ngắn nghệ thuật.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Truyền hình Trực tiếp</td><td className="px-4 py-2">Live Broadcast Style</td><td className="px-4 py-2">Ưu tiên tính thời sự và liên tục. Ít cắt dựng đột ngột, sử dụng nhiều máy quay cố định hoặc máy quay trên cần trục/ray để chuyển cảnh mượt.</td><td className="px-4 py-2">Tin tức, sự kiện thể thao, ca nhạc trực tiếp.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách MC Truyền hình</td><td className="px-4 py-2">News Anchor Style</td><td className="px-4 py-2">Bố cục tĩnh, cận cảnh/trung cảnh cố định. Ánh sáng mạnh, rõ ràng. Background đơn giản (thường là phông xanh, bảng tin). Tập trung tối đa vào thông tin và người dẫn.</td><td className="px-4 py-2">Bản tin thời sự, chương trình phỏng vấn studio.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Game Show / Talk Show</td><td className="px-4 py-2">Game Show / Talk Show Style</td><td className="px-4 py-2">Sử dụng nhiều góc máy, chuyển cảnh nhanh giữa MC, người chơi/khách mời và khán giả. Ánh sáng mạnh, nhiều màu sắc, sân khấu lớn và năng động.</td><td className="px-4 py-2">Các chương trình giải trí truyền hình.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Phỏng vấn đối thoại</td><td className="px-4 py-2">Interview / Sincere Style</td><td className="px-4 py-2">Hai người (phóng viên và nhân vật) cùng xuất hiện hoặc cắt xen kẽ (Over the Shoulder). Ánh sáng dịu, bố cục mở, tạo cảm giác thân mật, chân thành.</td><td className="px-4 py-2">Phóng sự tài liệu, chương trình đối thoại chuyên sâu.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Phóng sự / Tài liệu</td><td className="px-4 py-2">Documentary / Observational</td><td className="px-4 py-2">Ưu tiên tính chân thực. Thường dùng kỹ thuật cầm tay (handheld), ít ánh sáng nhân tạo, bố cục đôi khi không hoàn hảo để bắt kịp khoảnh khắc tự nhiên, sống động.</td><td className="px-4 py-2">Phim tài liệu, phóng sự điều tra, video khám phá.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Lãng mạn / Mềm mại</td><td className="px-4 py-2">Dreamy / Soft Focus</td><td className="px-4 py-2">Sử dụng ánh sáng mềm (soft light), thường có hiệu ứng mờ nhòe nhẹ ở các góc hoặc độ sâu trường ảnh cực nông để tạo cảm giác mơ màng, lãng mạn.</td><td className="px-4 py-2">Quay cưới, MV ballad, phim tình cảm.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Phong cách Cổ điển/Hoài cổ</td><td className="px-4 py-2">Vintage / Retro</td><td className="px-4 py-2">Sử dụng bộ lọc màu ấm, độ tương phản thấp, hiệu ứng hạt (grain) hoặc mô phỏng chất lượng video cũ.</td><td className="px-4 py-2">MV, video kỷ niệm, quảng cáo sản phẩm mang tính hoài niệm.</td></tr>
-                    
-                    <tr><td colSpan="5" className="px-4 py-2 font-bold text-white">II. KỸ THUẬT VỀ KÍCH CỠ KHUNG HÌNH (Shot Size Techniques)</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Cận cảnh Đặc tả</td><td className="px-4 py-2">Extreme Close-Up (ECU)</td><td className="px-4 py-2">Đặc tả một phần rất nhỏ của chủ thể (ví dụ: mắt, môi, chi tiết sản phẩm), nhấn mạnh cảm xúc hoặc chi tiết quan trọng.</td><td className="px-4 py-2">Drama, kinh dị, quảng cáo sản phẩm.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Cận cảnh</td><td className="px-4 py-2">Close-Up (CU)</td><td className="px-4 py-2">Chiếm toàn bộ khuôn mặt hoặc đầu của nhân vật, tập trung vào cảm xúc.</td><td className="px-4 py-2">Hội thoại, phản ứng cảm xúc.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Trung cảnh</td><td className="px-4 py-2">Medium Shot (MS)</td><td className="px-4 py-2">Chiếm từ thắt lưng trở lên của nhân vật. Phổ biến nhất trong các cảnh hội thoại và hành động.</td><td className="px-4 py-2">Phim truyền hình, phóng sự, vlog.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Toàn cảnh</td><td className="px-4 py-2">Long Shot (LS / Full Shot)</td><td className="px-4 py-2">Chiếm toàn bộ cơ thể nhân vật và một phần bối cảnh xung quanh.</td><td className="px-4 py-2">Thể hiện ngôn ngữ cơ thể, tương tác giữa nhân vật và môi trường.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Cảnh Toàn Viễn</td><td className="px-4 py-2">Extreme Wide Shot (EWS)</td><td className="px-4 py-2">Nhân vật rất nhỏ so với bối cảnh rộng lớn (cảnh vật, thành phố). Dùng để thiết lập không gian hoặc nhấn mạnh sự cô đơn/nhỏ bé của nhân vật.</td><td className="px-4 py-2">Cảnh mở đầu, thiết lập bối cảnh.</td></tr>
-                    
-                    <tr><td colSpan="5" className="px-4 py-2 font-bold text-white">III. KỸ THUẬT VỀ GÓC QUAY (Camera Angles)</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Góc ngang tầm mắt</td><td className="px-4 py-2">Eye-Level Shot</td><td className="px-4 py-2">Máy quay ngang tầm mắt chủ thể. Tạo cảm giác khách quan, tự nhiên nhất.</td><td className="px-4 py-2">Phổ biến nhất trong mọi thể loại.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Góc thấp</td><td className="px-4 py-2">Low Angle Shot</td><td className="px-4 py-2">Máy quay đặt dưới, hướng lên chủ thể. Tăng sự to lớn, quyền lực, hoặc đe dọa.</td><td className="px-4 py-2">Cảnh giới thiệu nhân vật phản diện, siêu anh hùng.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Góc cao</td><td className="px-4 py-2">High Angle Shot</td><td className="px-4 py-2">Máy quay đặt trên, hướng xuống chủ thể. Thể hiện sự yếu đuối, sự kiểm soát, hoặc cho cái nhìn tổng quan.</td><td className="px-4 py-2">Cảnh chiến lược, nhìn từ xa.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Góc Nghiêng</td><td className="px-4 py-2">Dutch Angle Shot</td><td className="px-4 py-2">Đường chân trời bị nghiêng, tạo cảm giác bất ổn, tâm lý méo mó, hoặc kịch tính.</td><td className="px-4 py-2">Phim kinh dị, tâm lý, hành động.</td></tr>
-                    
-                    <tr><td colSpan="5" className="px-4 py-2 font-bold text-white">IV. KỸ THUẬT CHUYỂN ĐỘNG (Camera Movement)</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Lia ngang</td><td className="px-4 py-2">Pan (Panning)</td><td className="px-4 py-2">Máy quay cố định tại một điểm, xoay ngang (trái-phải) để theo dõi chủ thể hoặc quét không gian.</td><td className="px-4 py-2">Theo dõi nhân vật đi ngang, giới thiệu phong cảnh.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Quay dọc</td><td className="px-4 py-2">Tilt</td><td className="px-4 py-2">Máy quay cố định tại một điểm, xoay dọc (lên-xuống) để thể hiện chiều cao hoặc chiều sâu.</td><td className="px-4 py-2">Cảnh nhìn lên tòa nhà cao, nhìn xuống vực thẳm.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Di chuyển Tiến/Lùi</td><td className="px-4 py-2">Dolly / Push-in</td><td className="px-4 py-2">Máy quay di chuyển tịnh tiến vào gần hoặc lùi ra xa chủ thể (thường bằng dolly/gimbal).</td><td className="px-4 py-2">Nhấn mạnh tâm lý, tập trung sự chú ý, hoặc tạo hiệu ứng kinh điển (Dolly Zoom).</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Di chuyển Song song</td><td className="px-4 py-2">Tracking / Trucking Shot</td><td className="px-4 py-2">Máy quay di chuyển ngang, song song với chuyển động của chủ thể.</td><td className="px-4 py-2">Cảnh rượt đuổi, theo dõi nhân vật đi bộ.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Cảnh quay liền mạch</td><td className="px-4 py-2">One Shot / Long Take</td><td className="px-4 py-2">Một cảnh quay rất dài không bị cắt, tạo cảm giác thời gian thực và sự chân thực/kịch tính.</td><td className="px-4 py-2">MV, phim nghệ thuật, cảnh hành động phức tạp.</td></tr>
-                    <tr><td className="px-4 py-2"></td><td className="px-4 py-2">Quay Drone</td><td className="px-4 py-2">Drone Shot / Aerial Shot</td><td className="px-4 py-2">Sử dụng thiết bị bay không người lái để quay từ trên không, mang lại góc nhìn rộng và độc đáo.</td><td className="px-4 py-2">Video du lịch, bất động sản, sự kiện quy mô lớn.</td></tr>
-                  </tbody>
-                </table>
+                {/* Render the extracted glossary component */}
+                <PromptGlossary />
               </div>
-            </div>
           </div>
 
           <div className="mt-8 pt-8 border-t border-gray-700">
