@@ -26,7 +26,47 @@ const CodeBlock = ({ code }) => {
   )
 }
 
-function PromptGuide() {
+const PromptGuide = () => {
+  const [activeSection, setActiveSection] = useState("")
+
+  const sections = [
+    { id: "thinking", title: "1. Tư duy đúng trước khi bắt đầu" },
+    { id: "formula", title: "Công thức Prompt Tiêu chuẩn" },
+    { id: "ai-capabilities", title: "2. Những thứ AI hiểu và không hiểu" },
+    { id: "scene-description", title: "3. Mô tả cảnh vật: Phải 'thấy được'" },
+    { id: "action-description", title: "4. Mô tả hành động: Phải 'đo được'" },
+    { id: "camera-control", title: "5. Điều khiển máy quay" },
+    { id: "lighting-color", title: "6. Ánh sáng và Màu sắc" },
+    { id: "reference-images", title: "7. Cách dùng ảnh mẫu" },
+    { id: "dialogue-sound", title: "8. Lời thoại và Âm thanh" },
+    { id: "refinement", title: "9. Sửa và Tinh chỉnh" },
+    { id: "common-errors", title: "10. Những lỗi thường gặp" },
+    { id: "terminology", title: "Phụ lục: Từ điển thuật ngữ" }
+  ]
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY
+
+    for (const s of sections) {
+      const el = document.getElementById(s.id)
+      if (!el) continue
+      const sectionTop = el.offsetTop - 120
+      const sectionBottom = sectionTop + el.offsetHeight
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+        setActiveSection(s.id)
+        return
+      }
+    }
+    // if none matched, clear
+    setActiveSection("")
+  }
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <div className="min-h-screen bg-gray-900">
       <GuideHeader
@@ -45,8 +85,38 @@ function PromptGuide() {
       />
 
       {/* Main Content */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-8">
+      <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex gap-8">
+          {/* Table of Contents - Fixed Sidebar */}
+          <div className="hidden lg:block w-64 flex-shrink-0">
+            <div className="sticky top-8 bg-gray-800 border border-gray-700 rounded-lg shadow-md p-4">
+              <h4 className="text-lg font-semibold text-white mb-4">Mục lục</h4>
+              <nav className="space-y-2">
+                {sections.map((section) => (
+                  <a
+                    key={section.id}
+                    href={`#${section.id}`}
+                    className={`block py-2 px-3 rounded transition-colors ${
+                      activeSection === section.id
+                        ? 'bg-indigo-600 text-white'
+                        : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+                    }`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(section.id)?.scrollIntoView({
+                        behavior: 'smooth'
+                      });
+                    }}
+                  >
+                    {section.title}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1 bg-gray-800 border border-gray-700 rounded-lg shadow-md p-8">
           <h2 className="text-3xl font-bold text-white mb-6">
             Hướng dẫn làm đạo diễn tạo video AI
           </h2>
@@ -70,7 +140,7 @@ function PromptGuide() {
             </div>
 
             {/* Section 1 */}
-            <div className="mb-8">
+            <div id="thinking" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">1. Tư duy đúng trước khi bắt đầu</h3>
               <div className="space-y-3 text-gray-300">
                 <p><strong className="text-white">Bạn là Đạo diễn, AI là người quay phim:</strong> Hãy tưởng tượng AI là một người quay phim rất giỏi về kỹ thuật, nhưng lại hoàn toàn không biết kịch bản hay ý đồ của bạn là gì. Nhiệm vụ của bạn là "dặn dò" thật kỹ (bằng lời nhắc prompt). Bạn càng rõ ràng, AI càng dễ "thực thi" chính xác.</p>
@@ -93,7 +163,7 @@ function PromptGuide() {
             </div>
 
             {/* Công thức prompt */}
-            <div className="mb-8 bg-gray-700 p-6 rounded-lg">
+            <div id="formula" className="mb-8 bg-gray-700 p-6 rounded-lg">
               <h3 className="text-2xl font-semibold text-white mb-4">CÔNG THỨC PROMPT TIÊU CHUẨN (có đủ 5 hạng mục sau):</h3>
               <ol className="space-y-3 text-gray-300">
                 <li><strong className="text-white">PHONG CÁCH:</strong> Quyết định phong cách tổng thể trước (ví dụ: "phong cách youtuber", "hoạt hình Ghibli", "MC dẫn chương trình", "góc nhìn từ camera an ninh").</li>
@@ -135,7 +205,7 @@ Hội thoại:
             </div>
 
             {/* Section 2 */}
-            <div className="mb-8">
+            <div id="ai-capabilities" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">2. Những thứ AI hiểu và không hiểu</h3>
               <div className="space-y-4 text-gray-300">
                 <div>
@@ -175,7 +245,7 @@ Hội thoại:
             </div>
 
             {/* Section 3 */}
-            <div className="mb-8">
+            <div id="scene-description" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">3. Mô tả cảnh vật: Phải "thấy được"</h3>
               <div className="space-y-4 text-gray-300">
                 <p>Khi mô tả, hãy dùng những từ ngữ mà mắt có thể nhìn thấy được. Hãy vẽ một bức tranh bằng lời.</p>
@@ -203,7 +273,7 @@ Hội thoại:
             </div>
 
             {/* Section 4 */}
-            <div className="mb-8">
+              <div id="action-description" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">4. Mô tả hành động: Phải "đo được"</h3>
               <div className="space-y-4 text-gray-300">
                 <p>Hành động càng cụ thể, AI càng dễ nắm bắt nhịp điệu (timing) của video.</p>
@@ -222,7 +292,7 @@ Hội thoại:
             </div>
 
             {/* Section 5 */}
-            <div className="mb-8">
+              <div id="camera-control" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">5. Điều khiển máy quay (Phần này nên để AI tự quyết định, chỉ can thiệp khi bạn là chuyên gia)</h3>
               <div className="space-y-4 text-gray-300">
                 <p>Đây là cách bạn "dẫn" mắt người xem và tạo cảm xúc.</p>
@@ -243,7 +313,7 @@ Hội thoại:
             </div>
 
             {/* Section 6 */}
-            <div className="mb-8">
+              <div id="lighting-color" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">6. Ánh sáng và Màu sắc (Tâm trạng)</h3>
               <div className="space-y-4 text-gray-300">
                 <p>Ánh sáng quyết định 80% cảm xúc của video.</p>
@@ -256,7 +326,7 @@ Hội thoại:
             </div>
 
             {/* Section 7 */}
-            <div className="mb-8">
+              <div id="reference-images" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">7. Cách dùng ảnh mẫu (Nếu có)</h3>
               <div className="space-y-3 text-gray-300">
                 <p>Bạn có thể đưa 1 ảnh mẫu để làm "neo" (tham khảo) cho khung hình đầu tiên. Việc này giúp "khóa" lại các yếu tố thị giác như thiết kế nhân vật, quần áo, và phong cách mỹ thuật.</p>
@@ -265,7 +335,7 @@ Hội thoại:
             </div>
 
             {/* Section 8 */}
-            <div className="mb-8">
+              <div id="dialogue-sound" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">8. Lời thoại và Âm thanh</h3>
               <div className="space-y-3 text-gray-300">
                 <p><strong className="text-white">Lời thoại (Dialogue):</strong> Đặt trong khu vực riêng, nên ngắn và tự nhiên. Ghi rõ trạng thái cảm xúc.</p>
@@ -280,7 +350,7 @@ Hội thoại:
             </div>
 
             {/* Section 9 */}
-            <div className="mb-8">
+              <div id="refinement" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">9. Sửa và Tinh chỉnh (Làm lại)</h3>
               <div className="space-y-3 text-gray-300">
                 <p><strong className="text-white">Khi video gần đúng ý (Remix):</strong> Giữ nguyên những phần đã ổn, và chỉ yêu cầu AI thay đổi <strong>một thứ duy nhất</strong> mỗi lần.</p>
@@ -311,7 +381,7 @@ Hội thoại:
             </div>
 
             {/* Section 10 */}
-            <div className="mb-8">
+              <div id="common-errors" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">10. Những lỗi thường gặp và Cách sửa nhanh</h3>
               <ol className="list-decimal pl-6 space-y-3 text-gray-300">
                 <li>
@@ -355,7 +425,7 @@ Hội thoại:
             </div>
 
             {/* Phụ lục */}
-            <div className="mb-8">
+              <div id="terminology" className="mb-8">
               <h3 className="text-2xl font-semibold text-white mb-4">PHỤ LỤC: TỪ ĐIỂN THUẬT NGỮ (TRA CỨU NHANH)</h3>
               <p className="text-gray-300 mb-4">
                 <strong className="text-white">Hướng dẫn sử dụng:</strong> Thêm từ khóa tiếng Việt vào đầu lời nhắc để AI hiểu rõ phong cách và kỹ thuật bạn muốn áp dụng.
@@ -427,6 +497,7 @@ Hội thoại:
               </svg>
               Quay lại trang chủ
             </a>
+          </div>
           </div>
         </div>
       </main>
