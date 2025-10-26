@@ -4,7 +4,6 @@ import HomePage from './pages/HomePage'
 import AndroidGuide from './pages/AndroidGuide'
 import IOSGuide from './pages/IOSGuide'
 import PromptGuide from './pages/PromptGuide'
-import SoraGuide from './pages/SoraGuide'
 import DownloadGuide from './pages/DownloadGuide'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 
@@ -48,14 +47,6 @@ function App() {
             element={
               <ProtectedRoute>
                 <PromptGuide />
-              </ProtectedRoute>
-            } 
-          />
-          <Route 
-            path="/sora" 
-            element={
-              <ProtectedRoute>
-                <SoraGuide />
               </ProtectedRoute>
             } 
           />

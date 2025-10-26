@@ -9,8 +9,8 @@ function DownloadGuide() {
       id: 1,
       title: 'Video hướng dẫn cho Android',
       description: 'Hướng dẫn chi tiết cách sử dụng AI trên thiết bị Android',
-      driveLink: 'https://drive.google.com/file/d/YOUR_ANDROID_VIDEO_ID/view',
-      downloadLink: 'https://drive.google.com/uc?export=download&id=YOUR_ANDROID_VIDEO_ID',
+      driveLink: 'https://drive.google.com/file/d/1igc_3GDXivZd-QVYnXTNN6urmaDr04_cUg/view',
+      downloadLink: 'https://drive.google.com/uc?export=download&id=1igc_3GDXivZd-QVYnXTNN6urmaDr04_cUg',
       thumbnail: 'https://via.placeholder.com/400x225/4CAF50/FFFFFF?text=Android+Guide',
       size: '25 MB',
       duration: '5:30',
@@ -36,38 +36,6 @@ function DownloadGuide() {
         </svg>
       ),
       color: 'bg-purple-600'
-    },
-    {
-      id: 3,
-      title: 'Video hướng dẫn viết Prompt',
-      description: 'Nghệ thuật viết prompt hiệu quả cho AI',
-      driveLink: 'https://drive.google.com/file/d/YOUR_PROMPT_VIDEO_ID/view',
-      downloadLink: 'https://drive.google.com/uc?export=download&id=YOUR_PROMPT_VIDEO_ID',
-      thumbnail: 'https://via.placeholder.com/400x225/FF9800/FFFFFF?text=Prompt+Guide',
-      size: '28 MB',
-      duration: '7:45',
-      icon: (
-        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      ),
-      color: 'bg-orange-600'
-    },
-    {
-      id: 4,
-      title: 'Video hướng dẫn Sora',
-      description: 'Hướng dẫn sử dụng Sora để tạo video bằng AI',
-      driveLink: 'https://drive.google.com/file/d/YOUR_SORA_VIDEO_ID/view',
-      downloadLink: 'https://drive.google.com/uc?export=download&id=YOUR_SORA_VIDEO_ID',
-      thumbnail: 'https://via.placeholder.com/400x225/E91E63/FFFFFF?text=Sora+Guide',
-      size: '35 MB',
-      duration: '8:20',
-      icon: (
-        <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-        </svg>
-      ),
-      color: 'bg-pink-600'
     }
   ]
 

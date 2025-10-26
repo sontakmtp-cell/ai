@@ -54,8 +54,8 @@ function HomePage() {
 
         {/* Feature Cards */}
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-purple-500 via-orange-500 via-pink-500 via-blue-500 to-indigo-500 transform -translate-y-1/2 z-0" style={{ marginLeft: '3rem', marginRight: '3rem' }}></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-8 relative z-10">
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-purple-500 via-orange-500 via-blue-500 to-indigo-500 transform -translate-y-1/2 z-0" style={{ marginLeft: '3rem', marginRight: '3rem' }}></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 relative z-10">
           <div 
             className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-green-500 transition-all cursor-pointer"
             onClick={() => navigate('/android')}
@@ -108,23 +108,6 @@ function HomePage() {
           </div>
 
           <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-pink-500 transition-all cursor-pointer"
-            onClick={() => navigate('/sora')}
-          >
-            <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-pink-600 rounded-lg flex items-center justify-center mr-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white">Bước 4: Hướng dẫn sử dụng Sora</h3>
-            </div>
-            <p className="text-gray-300">
-              Chi tiết cách sử dụng Sora để tạo video
-            </p>
-          </div>
-
-          <div 
             className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer"
             onClick={() => navigate('/download')}
           >
@@ -134,7 +117,7 @@ function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white">Tải video hướng dẫn</h3>
+              <h3 className="text-lg font-semibold text-white">Bước 4: Tải video hướng dẫn</h3>
             </div>
             <p className="text-gray-300">
               Tải xuống video hướng dẫn để xem offline
@@ -151,7 +134,7 @@ function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
               </div>
-              <h3 className="text-lg font-semibold text-white">Trợ lí AI</h3>
+              <h3 className="text-lg font-semibold text-white">Bước 5: Trợ lí AI</h3>
             </div>
             <p className="text-gray-300 mb-4">
               Trò chuyện với AI để sáng tạo kịch bản và nhận tư vấn kỹ thuật dựng video bằng AI

@@ -113,14 +113,6 @@ function LoginPage() {
               {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
             </button>
           </div>
-
-          <div className="text-center">
-            <div className="text-sm text-white drop-shadow">
-              <p>Tài khoản demo:</p>
-              <p>Email: admin@kythuatvang.com</p>
-              <p>Mật khẩu: admin123</p>
-            </div>
-          </div>
         </form>
       </div>
     </div>
