@@ -2,16 +2,122 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /* Improved prose styles for PromptGuide */
+  .prose-custom {
+    font-size: 1rem; /* 16px on mobile */
+    line-height: 1.75;
+    max-width: 70ch;
+  }
+
+  /* Larger font on desktop */
+  @media (min-width: 640px) {
+    .prose-custom {
+      font-size: 1.125rem; /* 18px on desktop */
+      line-height: 1.8;
+    }
+  }
+
+  .prose-custom h2 {
+    margin-top: 2em;
+    margin-bottom: 0.875em;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    font-size: 1.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .prose-custom h2 {
+      margin-top: 2.5em;
+      margin-bottom: 1em;
+      font-size: 1.875rem;
+    }
+  }
+
+  .prose-custom h3 {
+    margin-top: 1.75em;
+    margin-bottom: 0.625em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    font-size: 1.25rem;
+  }
+
+  @media (min-width: 640px) {
+    .prose-custom h3 {
+      margin-top: 2em;
+      margin-bottom: 0.75em;
+      font-size: 1.5rem;
+    }
+  }
+
+  .prose-custom p {
+    margin-bottom: 1.25em;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    margin-bottom: 1.25em;
+    padding-left: 1.5em;
+  }
+
+  .prose-custom li {
+    margin-bottom: 0.5em;
+  }
+
+  .prose-custom strong {
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+  }
+
+  .prose-custom em {
+    font-style: italic;
+    color: rgb(156, 163, 175);
+  }
+
+  /* Better code block styling */
+  .prose-custom pre {
+    margin-bottom: 1.5em;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+
+  /* Improve dark mode contrast */
+  .dark .prose-custom,
+  .prose-invert {
+    color: rgb(229, 231, 235); /* gray-200 */
+  }
+
+  .dark .prose-custom strong,
+  .prose-invert strong {
+    color: rgb(255, 255, 255);
+  }
+
+  .dark .prose-custom em,
+  .prose-invert em {
+    color: rgb(156, 163, 175); /* gray-400 */
+  }
+
+  /* Focus states for better accessibility */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid rgb(99, 102, 241); /* indigo-500 */
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
 }
