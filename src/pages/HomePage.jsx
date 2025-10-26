@@ -54,8 +54,8 @@ function HomePage() {
 
         {/* Feature Cards */}
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-purple-500 via-orange-500 via-indigo-500 to-pink-500 transform -translate-y-1/2 z-0" style={{ marginLeft: '3rem', marginRight: '3rem' }}></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 relative z-10">
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-purple-500 via-orange-500 via-pink-500 via-blue-500 to-indigo-500 transform -translate-y-1/2 z-0" style={{ marginLeft: '3rem', marginRight: '3rem' }}></div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6 mb-8 relative z-10">
           <div 
             className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-green-500 transition-all cursor-pointer"
             onClick={() => navigate('/android')}
@@ -121,6 +121,23 @@ function HomePage() {
             </div>
             <p className="text-gray-300">
               Chi tiết cách sử dụng Sora để tạo video
+            </p>
+          </div>
+
+          <div 
+            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer"
+            onClick={() => navigate('/download')}
+          >
+            <div className="flex items-center mb-4">
+              <div className="h-10 w-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
+                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white">Tải video hướng dẫn</h3>
+            </div>
+            <p className="text-gray-300">
+              Tải xuống video hướng dẫn để xem offline
             </p>
           </div>
 

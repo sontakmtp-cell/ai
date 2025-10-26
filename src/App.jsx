@@ -5,6 +5,7 @@ import AndroidGuide from './pages/AndroidGuide'
 import IOSGuide from './pages/IOSGuide'
 import PromptGuide from './pages/PromptGuide'
 import SoraGuide from './pages/SoraGuide'
+import DownloadGuide from './pages/DownloadGuide'
 import { AuthProvider, useAuth } from './contexts/AuthContext'
 
 function ProtectedRoute({ children }) {
@@ -55,6 +56,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <SoraGuide />
+              </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/download" 
+            element={
+              <ProtectedRoute>
+                <DownloadGuide />
               </ProtectedRoute>
             } 
           />
