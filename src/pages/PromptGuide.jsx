@@ -162,7 +162,7 @@ const PromptGuide = () => {
                 </Badge>
                 
                 <Badge type="success" icon="👑">
-                  <p><strong className="text-yellow-300">Chi tiết là Vua:</strong> Nếu bạn nói chung chung, AI sẽ phải tự "bịa" ra.</p>
+                  <p><strong className="text-yellow-300">Sự chi tiết là chìa khoá thành công:</strong> Nếu bạn nói chung chung, AI sẽ phải tự "bịa" ra.</p>
                   <ul className="list-disc pl-6 space-y-2 mt-2">
                     <li><em className="text-red-300 font-semibold">Ví dụ tư duy kém:</em> "Làm video con mèo." (AI không biết làm con mèo gì, ở đâu, đang làm gì. Vì vậy nó sẽ tự động tạo ra video con mèo trong công viên hoặc con mèo phong cách hoạt hình...).</li>
                     <li><em className="text-green-300 font-semibold">Ví dụ tư duy tốt:</em> "Mình muốn một video cận cảnh con mèo mướp đang ngáp, ánh nắng chiếu xiên làm rõ bộ lông."</li>
@@ -173,7 +173,7 @@ const PromptGuide = () => {
                 <Badge type="info" icon="⚖️">
                   <p><strong className="text-yellow-300">Biết lúc nào cần kỹ, lúc nào nên thả lỏng:</strong></p>
                   <ul className="list-disc pl-6 space-y-2 mt-2">
-                    <li><strong className="text-cyan-300">Cần kỹ:</strong> Những thứ bạn *bắt buộc* phải có. Đây là những "điểm neo" không thể thay đổi. (ví dụ: "PHONG CÁCH YOUTUBER", "nhân vật phải mặc áo phi công đeo phù hiệu cờ Việt Nam").</li>
+                    <li><strong className="text-cyan-300">Cần mô tả kỹ:</strong> Những thứ bạn *bắt buộc* phải có. Đây là những "điểm neo" không thể thay đổi. (ví dụ: "PHONG CÁCH YOUTUBER", "nhân vật phải mặc áo phi công đeo phù hiệu cờ Việt Nam").</li>
                     <li><strong className="text-cyan-300">Thả lỏng:</strong> Những thứ bạn muốn AI tự do sáng tạo. Bạn chỉ cần mô tả "đường phố đông đúc", "có vài người đang làm việc quanh đó", bạn không cần mô tả từng người một.</li>
                   </ul>
                 </Badge>
@@ -207,7 +207,7 @@ const PromptGuide = () => {
               <h3 className="text-2xl font-semibold text-white mb-4">Ví dụ Minh Họa Áp Dụng Công Thức:</h3>
               
               <div className="mb-4">
-                <p className="text-white font-semibold mb-2">Ví dụ 1: Prompt đơn giản (ưu tiên sử dụng phương pháp này)</p>
+                <p className="text-white font-semibold mb-2">Ví dụ 1: Prompt đơn giản (Hãy ưu tiên sử dụng phương pháp này vì AI sẽ cho ra kết quả thú vị hơn)</p>
                 <CodeBlock code={`Phong cách youtuber, năng lượng cao.
 @sontak là phi công đứng cạnh máy bay tiêm kích Su-57 trên đường băng, anh ta đang review chiếc máy bay.`} />
               </div>
@@ -240,7 +240,7 @@ Hội thoại:
               </div>
               <div className="space-y-4 text-gray-300">
                 <Badge type="success" icon="✅">
-                  <p className="font-semibold text-yellow-300 mb-2">Những thứ AI điều khiển được (Nên viết):</p>
+                  <p className="font-semibold text-yellow-300 mb-2">Những thứ AI điều khiển được (Nên viết vào lời nhắc):</p>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Chủ thể (Nhân vật, con vật, đồ vật)</li>
                     <li>Bối cảnh (Nơi chốn, thời tiết, thời gian)</li>
@@ -283,7 +283,7 @@ Hội thoại:
               </div>
               <div className="space-y-4 text-gray-300">
                 <Badge type="tip" icon="👁️">
-                  <p>Khi mô tả, hãy dùng những từ ngữ mà mắt có thể nhìn thấy được. Hãy vẽ một bức tranh bằng lời.</p>
+                  <p>Khi mô tả, hãy dùng những từ ngữ mà mắt có thể nhìn thấy được. Bạn là nghệ sĩ prompt, hãy vẽ một bức tranh bằng lời.</p>
                 </Badge>
                 
                 <Badge type="example">
@@ -303,7 +303,8 @@ Hội thoại:
                 <Badge type="info" icon="🎨">
                   <p><strong className="text-yellow-300">Nói rõ "Phong cách" ngay từ đầu:</strong> Hãy quyết định phong cách trước tiên. Đây là "bộ lọc" tổng thể cho video.</p>
                   <ul className="list-disc pl-6 space-y-1 mt-2">
-                    <li>"phong cách anime Ghibli" (màu sắc tươi sáng, nét vẽ tay)</li>
+                    <li>"Phong cách youtuber" (thường có người dẫn chuyện (host) nhìn thẳng vào camera)</li>
+                    <li>"Phong cách anime Ghibli" (màu sắc tươi sáng, nét vẽ tay)</li>
                     <li>"Video tài liệu IMAX hoành tráng" (góc quay rộng, hình ảnh siêu nét)</li>
                     <li>"Video quay bằng điện thoại cầm tay bị rung" (hiệu ứng rung lắc tự nhiên)</li>
                   </ul>
@@ -315,7 +316,7 @@ Hội thoại:
               <div id="action-description" className="mb-8 scroll-mt-20">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-4xl">{sections[4].icon}</span>
-                <h3 className="text-2xl font-semibold text-white">4. Mô tả hành động: Phải "đo được"</h3>
+                <h3 className="text-2xl font-semibold text-white">4. Mô tả hành động: Phải "đo được bằng con số"</h3>
               </div>
               <div className="space-y-4 text-gray-300">
                 <Badge type="tip" icon="⏱️">
@@ -347,7 +348,7 @@ Hội thoại:
                 <h3 className="text-2xl font-semibold text-white">5. Điều khiển máy quay</h3>
               </div>
               <Badge type="warning" icon="🎓">
-                <p className="font-semibold">Phần này nên để AI tự quyết định, chỉ can thiệp khi bạn là chuyên gia</p>
+                <p className="font-semibold">Phần này nên để AI tự quyết định, không cần ghi vào prompt thì kết quả sẽ tốt hơn, chỉ can thiệp khi bạn là chuyên gia</p>
               </Badge>
               <div className="space-y-4 text-gray-300 mt-4">
                 <Badge type="info" icon="🎥">
@@ -404,10 +405,21 @@ Hội thoại:
               </div>
               <div className="space-y-3 text-gray-300">
                 <Badge type="info">
-                  <p>Bạn có thể đưa 1 ảnh mẫu để làm "neo" (tham khảo) cho khung hình đầu tiên. Việc này giúp "khóa" lại các yếu tố thị giác như thiết kế nhân vật, quần áo, và phong cách mỹ thuật.</p>
+                  <p>Bạn có thể đưa 1 ảnh mẫu để làm "neo" (tham khảo) cho khung hình đầu tiên. Việc này giúp "khóa" lại các yếu tố thị giác như thiết kế nhân vật, quần áo, và phong cách mỹ thuật. Hãy sử dụng Gemnini hoặc ChatGPT để tạo ảnh bối cảnh hoặc vật thể mình muốn để làm ảnh tham chiếu.</p>
+                </Badge>
+                <Badge type="example">
+                  <p className="font-semibold text-yellow-300 mb-2">Ví dụ sử dụng ảnh mẫu:</p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>"Sử dụng hình ảnh đính kèm để làm tham chiếu cho chiếc máy bay Su-57"</li>
+                    <li>"Sử dụng hình ảnh đính kèm làm tham chiếu cho bối cảnh"</li>
+                  </ul>
                 </Badge>
                 <Badge type="warning">
-                  <p><strong className="text-white">Lưu ý:</strong> Ảnh chỉ khóa <em>vẻ bề ngoài</em>. Bạn vẫn phải dùng chữ để mô tả <em>hành động</em> và <em>chuyển động</em>.</p>
+                  <p><strong className="text-white">Lưu ý:</strong></p>
+                  <ul className="list-disc pl-6 space-y-2 mt-2">
+                    <li>Ảnh chỉ khóa <em>vẻ bề ngoài</em>. Bạn vẫn phải dùng chữ để mô tả <em>hành động</em> và <em>chuyển động</em>.</li>
+                    <li>Sora chưa cho phép tải lên hình ảnh có hình người hoặc khuôn mặt người.</li>
+                  </ul>
                 </Badge>
               </div>
             </div>
@@ -444,31 +456,13 @@ Hội thoại:
               </div>
               <div className="space-y-3 text-gray-300">
                 <Badge type="success" icon="🎯">
-                  <p><strong className="text-yellow-300">Khi video gần đúng ý (Remix):</strong> Giữ nguyên những phần đã ổn, và chỉ yêu cầu AI thay đổi <strong className="text-yellow-300">một thứ duy nhất</strong> mỗi lần.</p>
+                  <p><strong className="text-yellow-300">Khi video gần đúng ý:</strong> Sora cho phép người dùng remix (sửa đổi) lại video đã đăng. Vì vậy bạn hãy tận dụng tối đa tính năng này để tạo ra những phiên bản khác của video gốc. Giữ nguyên những phần đã ổn, và chỉ yêu cầu AI thay đổi <strong className="text-yellow-300">một thứ duy nhất</strong> mỗi lần. Sau khi có nhiều phiên bản khác nhau, bạn hãy có thể cắt ghép các phiên bản đó lại với nhau tạo thành 1 video dài hơn</p>
                 </Badge>
                 
                 <Badge type="example">
                   <div className="space-y-2 text-sm">
-                    <div className="relative">
-                      <p><em className="text-gray-200">Prompt gốc:</em> "Cận cảnh bông hoa hồng đỏ, máy quay đứng yên, ánh sáng ban ngày."</p>
-                      <button
-                        onClick={() => navigator.clipboard.writeText("Cận cảnh bông hoa hồng đỏ, máy quay đứng yên, ánh sáng ban ngày.")}
-                        className="absolute -top-1 -right-1 bg-gray-600 hover:bg-gray-500 text-gray-300 text-xs font-semibold py-1 px-2 rounded-md transition-colors opacity-50 hover:opacity-100"
-                        title="Chép prompt gốc"
-                      >
-                        Chép
-                      </button>
-                    </div>
-                    <div className="relative">
-                      <p><em className="text-gray-200">Prompt tinh chỉnh (Remix):</em> "Giữ nguyên cảnh bông hoa hồng đỏ, nhưng đổi thành ánh sáng hoàng hôn vàng ấm, và thêm hiệu ứng slow-motion khi cánh hoa rơi."</p>
-                      <button
-                        onClick={() => navigator.clipboard.writeText("Giữ nguyên cảnh bông hoa hồng đỏ, nhưng đổi thành ánh sáng hoàng hôn vàng ấm, và thêm hiệu ứng slow-motion khi cánh hoa rơi.")}
-                        className="absolute -top-1 -right-1 bg-gray-600 hover:bg-gray-500 text-gray-300 text-xs font-semibold py-1 px-2 rounded-md transition-colors opacity-50 hover:opacity-100"
-                        title="Chép prompt tinh chỉnh"
-                      >
-                        Chép
-                      </button>
-                    </div>
+                    <p><em className="text-gray-200">Prompt gốc:</em> "Cận cảnh bông hoa hồng đỏ, máy quay đứng yên, ánh sáng ban ngày."</p>
+                    <p><em className="text-gray-200">Prompt tinh chỉnh (Remix):</em> "Giữ nguyên cảnh bông hoa hồng đỏ, nhưng đổi thành ánh sáng hoàng hôn vàng ấm, và thêm hiệu ứng slow-motion khi cánh hoa rơi."</p>
                   </div>
                 </Badge>
 
