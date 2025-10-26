@@ -59,7 +59,30 @@ AI/
 
 ## Deployment
 
-Để deploy lên production:
+### Deploy lên Vercel (Khuyến nghị)
+
+Xem hướng dẫn chi tiết tại: [HUONG-DAN-DEPLOY-VERCEL.md](./HUONG-DAN-DEPLOY-VERCEL.md)
+
+**Bước nhanh:**
+
+1. **Push code lên GitHub:**
+```bash
+git add .
+git commit -m "Ready for deployment"
+git push origin master
+```
+
+2. **Import vào Vercel:**
+   - Truy cập [vercel.com](https://vercel.com)
+   - Import repository từ GitHub
+   - Vercel tự động build và deploy
+
+3. **Cấu hình Domain:**
+   - Thêm domain `ai.kythuatvang.com` trong Vercel
+   - Cấu hình CNAME record trên GoDaddy
+   - Đợi DNS propagate
+
+### Deploy thủ công
 
 1. **Build ứng dụng:**
 ```bash
