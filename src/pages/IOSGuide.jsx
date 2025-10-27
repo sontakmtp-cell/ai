@@ -11,20 +11,52 @@ function IOSGuide() {
   // Dữ liệu các slide - bạn có thể thay đổi URL hình ảnh và chú thích tại đây
   const slides = [
     {
-      image: 'https://via.placeholder.com/800x600/9C27B0/FFFFFF?text=Bước+1',
-      caption: 'Bước 1: Cài đặt ứng dụng - Tải và cài đặt ứng dụng từ App Store trên iPhone của bạn.'
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027d0709f471123dd251c6bc34f864b7de8.jpg',
+      caption: 'Bước 1: Các bạn vào App Store trên iPhone của mình.'
     },
     {
-      image: 'https://via.placeholder.com/800x600/673AB7/FFFFFF?text=Bước+2',
-      caption: 'Bước 2: Đăng nhập - Mở ứng dụng và nhập thông tin đăng nhập để truy cập vào hệ thống.'
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027a8ffba919b46dd71c8ebaad9fbf1fa06.jpg',
+      caption: 'Bước 2: Nhấp vào tài khoản của bạn.'
     },
     {
-      image: 'https://via.placeholder.com/800x600/3F51B5/FFFFFF?text=Bước+3',
-      caption: 'Bước 3: Sử dụng AI - Sau khi đăng nhập thành công, bạn có thể bắt đầu sử dụng các tính năng AI trên thiết bị iOS.'
+      image: 'https://sf-static.upanhlaylink.com/img/image_202510276555a280bc15a55da6012cc7a8d9177b.jpg',
+      caption: 'Bước 3: Chọn Quốc gia/Vùng.'
     },
     {
-      image: 'https://via.placeholder.com/800x600/2196F3/FFFFFF?text=Bước+4',
-      caption: 'Bước 4: Tận hưởng trải nghiệm - Khám phá các tính năng AI mạnh mẽ trên iPhone của bạn.'
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027c823084533cb3a195a48fd6c28dced64.jpg',
+      caption: 'Bước 4: Nhập Hòa Kỳ'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_202510274e66474e5c61d2b7c34276c367f55d8e.jpg',
+      caption: 'Bước 5: Chọn tiếp tục.'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027feb6c2c92423719eba6e5efafc515c1c.jpg',
+      caption: 'Bước 6: Truy cập trang web https://ca.postcodebase.com/vi/randomaddress để lấy thông tin địa chỉ ở Mỹ. (Trang web không cung cấp xã, phường nên các bạn hãy tự bịa ra). Đối với số điện thoại thì các bạn lên google gõ tìm kiếm: "số điện thoại Mỹ ngẫu nhiên" để lấy.'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027e1323e4a555f409db162bf8c83737b61.jpg',
+      caption: 'Bước 7: Điền các thông tin đó vào và nhấn tiếp tục'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027d73f342c1169f91b4e236372eeb75269.jpg',
+      caption: 'Bước 8: Lên App Store tải cài đặt ứng dụng Sora, ChatGPT và Gemini.'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_202510275ccfac3ff998fc8bbf22b1aba5d58f97.jpg',
+      caption: 'Bước 9: Mở Sora lên đăng nhập bằng tài khoản google, sau đó nhấn vào nút Tạo Cameo.'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_202510272fa18c76599ad577fdb13960fd9b255d.jpg',
+      caption: 'Bước 10: Nhấn nút Bắt đầu và làm theo hướng dẫn.'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_20251027a589eeec405842c7c595ee2b08aa4d44.jpg',
+      caption: 'Bước 11: Sau khi tạo Cameo xong, các bạn nhấn nút dấu + để bắt đầu tạo video'
+    },
+    {
+      image: 'https://sf-static.upanhlaylink.com/img/image_202510270494ec004d255425894e17de46a086b8.jpg',
+      caption: 'Bước 12: Các bạn có thể nhấp vào nút tùy chỉnh để chọn khổ ngang hay dọc và độ dài video.'
     }
   ]
 

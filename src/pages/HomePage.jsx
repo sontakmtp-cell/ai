@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { QRCodeSVG } from 'qrcode.react'
@@ -6,6 +6,11 @@ import { QRCodeSVG } from 'qrcode.react'
 function HomePage() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleLogout = () => {
     logout()
@@ -14,7 +19,7 @@ function HomePage() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Header */}
-      <header className="bg-gray-800 shadow-sm border-b border-gray-700">
+      <header className={`bg-gray-800 shadow-sm border-b border-gray-700 animate-fade-in-down ${mounted ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
@@ -43,13 +48,26 @@ function HomePage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Chào mừng đến với khóa học tạo video bằng AI
+        <div className={`text-center mb-8 animate-fade-in-up ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            🔥 BÙNG NỔ SÁNG TẠO: SORA ĐÃ ĐẾN! 🔥
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Thực hiện theo hướng dẫn từng bước để tạo video bằng AI một cách hiệu quả.
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-medium mb-4">
+            KHÔNG CÒN LÀ MƠ ƯỚC, ĐÂY LÀ CUỘC CÁCH MẠNG VIDEO TIẾP THEO!
           </p>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-6">
+            Xin trân trọng giới thiệu: Mô hình tạo video SORA - Mạng xã hội video AI đột phá, nơi hội tụ cảm hứng không giới hạn và sức mạnh công nghệ tối thượng! Hãy quên đi những giới hạn cũ, bởi vì Sora chính là TikTok X AI Siêu Cấp, mở khóa cánh cổng để bạn trở thành nhà làm phim vĩ đại nhất của chính mình!
+          </p>
+          <div className="text-lg text-gray-300 max-w-3xl mx-auto space-y-4">
+            <p className="font-medium">Điều kỳ diệu nằm ở đây:</p>
+            <p>Chỉ cần <span className="text-yellow-400">MÔ TẢ</span>, và trong chớp mắt, Sora sẽ biến bạn thành <span className="text-yellow-400">NHÂN VẬT CHÍNH</span> trong bất kỳ kịch bản nào, với chất lượng điện ảnh kinh ngạc!</p>
+            <ul className="space-y-2">
+              <li>✨ Muốn làm Siêu Anh Hùng Marvel bay lượn trên bầu trời New York? <span className="text-green-400">Xong!</span></li>
+              <li>✨ Muốn trở thành Vũ công Ballet biểu diễn dưới ánh trăng huyền ảo? <span className="text-green-400">Hoàn thành!</span></li>
+              <li>✨ Muốn Thám hiểm Vũ Trụ hay Phiêu lưu trong Rừng Sâu bí ẩn? <span className="text-green-400">Đã có Sora lo!</span></li>
+            </ul>
+            <p className="font-medium text-xl text-center mt-6">Hãy sẵn sàng để <span className="text-yellow-400">TẠO NỘI DUNG</span> và <span className="text-yellow-400">THỐNG TRỊ MỌI NỀN TẢNG!</span></p>
+          </div>
         </div>
 
         {/* Feature Cards */}
@@ -57,7 +75,7 @@ function HomePage() {
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-purple-500 via-orange-500 via-blue-500 to-indigo-500 transform -translate-y-1/2 z-0" style={{ marginLeft: '3rem', marginRight: '3rem' }}></div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 relative z-10">
           <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-green-500 transition-all cursor-pointer"
+            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-green-500 transition-all cursor-pointer card-animate-1 transform hover:-translate-y-1"
             onClick={() => navigate('/android')}
           >
             <div className="flex items-center mb-4">
@@ -74,7 +92,7 @@ function HomePage() {
           </div>
 
           <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-purple-500 transition-all cursor-pointer"
+            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-purple-500 transition-all cursor-pointer card-animate-2 transform hover:-translate-y-1"
             onClick={() => navigate('/ios')}
           >
             <div className="flex items-center mb-4">
@@ -91,7 +109,7 @@ function HomePage() {
           </div>
 
           <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-orange-500 transition-all cursor-pointer"
+            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-orange-500 transition-all cursor-pointer card-animate-3 transform hover:-translate-y-1"
             onClick={() => navigate('/prompt')}
           >
             <div className="flex items-center mb-4">
@@ -108,7 +126,7 @@ function HomePage() {
           </div>
 
           <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer"
+            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer card-animate-4 transform hover:-translate-y-1"
             onClick={() => navigate('/download')}
           >
             <div className="flex items-center mb-4">
@@ -125,7 +143,7 @@ function HomePage() {
           </div>
 
           <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-indigo-500 transition-all cursor-pointer"
+            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-indigo-500 transition-all cursor-pointer card-animate-5 transform hover:-translate-y-1"
             onClick={() => window.open('https://gemini.google.com/gem/1Rs-tHSUZuCkk2c_yQziKPCTSaKsFGfZQ?usp=sharing', '_blank')}
           >
             <div className="flex items-center mb-4">
