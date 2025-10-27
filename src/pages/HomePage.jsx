@@ -3,6 +3,110 @@ import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { QRCodeSVG } from 'qrcode.react'
 
+const cardData = [
+  {
+    title: 'Bước 1: Hướng dẫn cho Android',
+    description: 'Hướng dẫn chi tiết dành cho người dùng Android',
+    icon: (
+      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+      </svg>
+    ),
+    path: '/android',
+    color: 'green',
+  },
+  {
+    title: 'Bước 2: Hướng dẫn cho Iphone (iOS)',
+    description: 'Hướng dẫn chi tiết dành cho người dùng Iphone (iOS)',
+    icon: (
+      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+      </svg>
+    ),
+    path: '/ios',
+    color: 'purple',
+  },
+  {
+    title: 'Bước 3: Hướng dẫn viết lời nhắc cho AI',
+    description: 'Hướng dẫn chi tiết về nghệ thuật viết prompt để tạo video bằng AI',
+    icon: (
+      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+      </svg>
+    ),
+    path: '/prompt',
+    color: 'orange',
+  },
+  {
+    title: 'Bước 4: Tải video hướng dẫn',
+    description: 'Tải xuống video hướng dẫn để xem offline',
+    icon: (
+      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+    ),
+    path: '/download',
+    color: 'blue',
+  },
+  {
+    title: 'Bước 5: Trợ lí AI',
+    description: 'Trò chuyện với AI để sáng tạo kịch bản và nhận tư vấn kỹ thuật dựng video bằng AI',
+    icon: (
+      <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+      </svg>
+    ),
+    link: 'https://gemini.google.com/gem/1Rs-tHSUZuCkk2c_yQziKPCTSaKsFGfZQ?usp=sharing',
+    color: 'indigo',
+    qrCode: true,
+  },
+];
+
+const FeatureCard = ({ card, index, navigate }) => {
+  const { title, description, icon, path, link, color, qrCode } = card;
+  const animationDelay = `${index * 100}ms`;
+
+  const handleClick = () => {
+    if (path) navigate(path);
+    if (link) window.open(link, '_blank');
+  };
+
+  return (
+    <div className="bg-sky-700 rounded-2xl shadow-sm shadow-sky-500 outline outline-slate-400 -outline-offset-8">
+      <div
+        onClick={handleClick}
+        style={{ animationDelay }}
+        className="group overflow-hidden relative after:duration-500 before:duration-500 duration-500 
+                 hover:after:duration-500 hover:after:translate-x-24 
+                 hover:before:translate-y-12 hover:before:-translate-x-32 
+                 hover:duration-500 
+                 after:absolute after:w-24 after:h-24 after:bg-sky-700 
+                 after:rounded-full after:blur-xl after:bottom-32 after:right-16 
+                 after:w-12 after:h-12
+                 before:absolute before:w-20 before:h-20 before:bg-sky-400 
+                 before:rounded-full before:blur-xl before:top-20 before:right-16 
+                 before:w-12 before:h-12
+                 hover:rotate-12 flex flex-col justify-center items-center h-[480px] w-full
+                 bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8 
+                 animate-fade-in-up opacity-0"
+      >
+        <div className="z-10 flex flex-col items-center gap-4 p-8">
+          <div className={`h-16 w-16 bg-${color}-600 rounded-lg flex items-center justify-center`}>
+            {icon}
+          </div>
+          <h3 className="text-xl font-bold text-white text-center">{title}</h3>
+          <p className="text-gray-300 text-center text-base leading-relaxed">{description}</p>
+          {qrCode && (
+            <div className="flex justify-center mt-6">
+              <QRCodeSVG value={link} size={140} bgColor="transparent" fgColor="#ffffff" level="M" includeMargin={false} />
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function HomePage() {
   const { user, logout } = useAuth()
   const navigate = useNavigate()
@@ -17,11 +121,11 @@ function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-gray-900 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
       {/* Header */}
       <header className={`bg-gray-800 shadow-sm border-b border-gray-700 animate-fade-in-down ${mounted ? 'opacity-100' : 'opacity-0'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
+          <div className="flex justify-between items-center py-2">
             <div className="flex items-center">
               <div className="h-8 w-8 bg-indigo-600 rounded-full flex items-center justify-center mr-3">
                 <svg className="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -48,8 +152,8 @@ function HomePage() {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className={`text-center mb-8 animate-fade-in-up ${mounted ? 'opacity-100' : 'opacity-0'}`}>
-          <h2 className="text-4xl font-bold text-white mb-4">
+        <div className={`text-center mb-12 animate-fade-in-up ${mounted ? 'opacity-100' : 'opacity-0'}`}>
+          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400 mb-4 leading-relaxed py-2">
             🔥 BÙNG NỔ SÁNG TẠO: SORA ĐÃ ĐẾN! 🔥
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto font-medium mb-4">
@@ -72,102 +176,14 @@ function HomePage() {
 
         {/* Feature Cards */}
         <div className="relative">
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-green-500 via-purple-500 via-orange-500 via-blue-500 to-indigo-500 transform -translate-y-1/2 z-0" style={{ marginLeft: '3rem', marginRight: '3rem' }}></div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8 relative z-10">
-          <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-green-500 transition-all cursor-pointer card-animate-1 transform hover:-translate-y-1"
-            onClick={() => navigate('/android')}
-          >
-            <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-8 mb-8">
+            {cardData.map((card, index) => (
+              <div className="flex justify-center">
+                <div className="w-full max-w-sm">
+                  <FeatureCard key={card.title} card={card} index={index} navigate={navigate} />
+                </div>
               </div>
-              <h3 className="text-lg font-semibold text-white">Bước 1: Hướng dẫn cho Android</h3>
-            </div>
-            <p className="text-gray-300">
-              Hướng dẫn chi tiết dành cho người dùng Android
-            </p>
-          </div>
-
-          <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-purple-500 transition-all cursor-pointer card-animate-2 transform hover:-translate-y-1"
-            onClick={() => navigate('/ios')}
-          >
-            <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white">Bước 2: Hướng dẫn cho Iphone (iOS)</h3>
-            </div>
-            <p className="text-gray-300">
-              Hướng dẫn chi tiết dành cho người dùng Iphone (iOS)
-            </p>
-          </div>
-
-          <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-orange-500 transition-all cursor-pointer card-animate-3 transform hover:-translate-y-1"
-            onClick={() => navigate('/prompt')}
-          >
-            <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-orange-600 rounded-lg flex items-center justify-center mr-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white">Bước 3: Hướng dẫn viết lời nhắc cho AI</h3>
-            </div>
-            <p className="text-gray-300">
-              Hướng dẫn chi tiết về nghệ thuật viết prompt để tạo video bằng AI
-            </p>
-          </div>
-
-          <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-blue-500 transition-all cursor-pointer card-animate-4 transform hover:-translate-y-1"
-            onClick={() => navigate('/download')}
-          >
-            <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white">Bước 4: Tải video hướng dẫn</h3>
-            </div>
-            <p className="text-gray-300">
-              Tải xuống video hướng dẫn để xem offline
-            </p>
-          </div>
-
-          <div 
-            className="bg-gray-800 border border-gray-700 rounded-lg shadow-md p-6 hover:shadow-xl hover:border-indigo-500 transition-all cursor-pointer card-animate-5 transform hover:-translate-y-1"
-            onClick={() => window.open('https://gemini.google.com/gem/1Rs-tHSUZuCkk2c_yQziKPCTSaKsFGfZQ?usp=sharing', '_blank')}
-          >
-            <div className="flex items-center mb-4">
-              <div className="h-10 w-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-white">Bước 5: Trợ lí AI</h3>
-            </div>
-            <p className="text-gray-300 mb-4">
-              Trò chuyện với AI để sáng tạo kịch bản và nhận tư vấn kỹ thuật dựng video bằng AI
-            </p>
-            <div className="flex justify-center">
-              <QRCodeSVG 
-                value="https://gemini.google.com/gem/1Rs-tHSUZuCkk2c_yQziKPCTSaKsFGfZQ?usp=sharing" 
-                size={128}
-                bgColor="#1f2937"
-                fgColor="#ffffff"
-                level="M"
-                includeMargin={false}
-              />
-            </div>
-          </div>
+            ))}
           </div>
         </div>
       </main>
