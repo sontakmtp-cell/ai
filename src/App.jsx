@@ -3,8 +3,8 @@ import Iridescence from './components/Iridescence'
 const sale = {
   domain: 'goodmcp.si',
   price: 'Open to offers',
-  contactLabel: 'github.com/sontakmtp-cell',
-  contactUrl: 'https://github.com/sontakmtp-cell',
+  contactLabel: 'sontakmtp@gmail.com',
+  contactUrl: 'mailto:sontakmtp@gmail.com?subject=Offer%20for%20goodmcp.si',
 }
 
 function App() {
